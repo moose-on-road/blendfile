@@ -1,0 +1,14 @@
+This script does the following:
+1.
+Waits for the DOM to be fully loaded.
+2.
+Extracts the relevant part of the current page's URL (e.g., "blue-car").
+3.
+Constructs a GitHub URL using the extracted part.
+4.
+You can then use this URL as needed, for example, setting it as the href attribute of a download link.
+
+
+Make sure to replace 'yourUsername', 'yourRepo', and adjust the path as necessary to correctly point to where your files are stored within your GitHub repository.
+
+Also, ensure that the files you are linking to on GitHub are publicly accessible, and consider the GitHub's policies on raw content serving if you're linking directly to raw file content.
