@@ -1,0 +1,33 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to extract the relevant part of the URL
+    function extractFileNameFromURL() {
+        // Assuming the URL structure is something like website.com/store/item-name
+        // This will split the URL by '/' and pick the last part as the file name
+        const parts = window.location.pathname.split('/');
+        const fileName = parts.pop() || parts.pop();  // Handle potential trailing slash
+        return fileName;
+    }
+
+    // Function to construct the GitHub URL
+    function constructGitHubURL(fileName) {
+        // Replace 'yourUsername' and 'yourRepo' with your actual GitHub username and repository name
+        // Also, adjust the path as necessary to point to where your files are stored within the repository
+        return `https://github.com/yourUsername/yourRepo/.../${fileName}.glb`;
+    }
+
+    // Extract the file name from the current URL
+    const fileName = extractFileNameFromURL();
+
+    // Construct the GitHub URL
+    const githubURL = constructGitHubURL(fileName);
+
+    // Now you can use the githubURL for whatever you need, for example:
+    // Setting it as the href for a link, setting it as the src for an iframe, etc.
+    console.log(githubURL); // For demonstration, logging it to the console
+
+    // Example: Setting the URL as the href for a download link
+    const downloadLink = document.getElementById('downloadLink'); // Assuming there's an element with this ID
+    if (downloadLink) {
+        downloadLink.href = githubURL;
+    }
+});
